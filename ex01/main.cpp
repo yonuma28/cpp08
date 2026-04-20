@@ -49,13 +49,19 @@ int main()
 			std::cout << "single add rejection: " << e.what() << std::endl;
 		}
 	}
+	std::cout << "-------------------" << std::endl;
+
+	{
+		Span empty;
+		printSpan(empty, "empty");
+	}
 
 	{
 		Span small(1);
 		small.addNumber(42);
 		printSpan(small, "small");
 	}
-
+	std::cout << "-------------------" << std::endl;
 	{
 		Span rangeSpan(10000);
 		std::vector<int> values;
